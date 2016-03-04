@@ -357,6 +357,11 @@ public class GameMaster {
 	 * @param player the player
 	 */
 	public void playerMoved(Player player) {
+		setupGuiForPlayer(player);
+        gui.setTradeEnabled(turn, false);
+	}
+
+	private void setupGuiForPlayer(Player player) {
 		Cell cell = player.getPosition();
 		int playerIndex = getPlayerIndex(player);
 		if(cell instanceof CardCell) {
@@ -370,7 +375,6 @@ public class GameMaster {
 			}	
 			gui.enableEndTurnBtn(playerIndex);
 		}
-        gui.setTradeEnabled(turn, false);
 	}
 
 	/**
