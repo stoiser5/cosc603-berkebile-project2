@@ -25,4 +25,12 @@ public class GoCell extends Cell {
 	 */
 	void setName(String name) {
 	}
+
+	
+	/**
+	 * Sets the available.
+	 *
+	 * @param available the new available
+	 */
+	
 }

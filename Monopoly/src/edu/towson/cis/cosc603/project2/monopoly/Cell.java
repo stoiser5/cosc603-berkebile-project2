@@ -4,16 +4,16 @@ package edu.towson.cis.cosc603.project2.monopoly;
 /**
  * The Class Cell.
  */
-public abstract class Cell {
-	
-	/** The available. */
-	private boolean available = true;
+public abstract class Cell implements IOwnable {
 	
 	/** The name. */
 	private String name;
 	
-	/** The owner. */
-	protected Player owner;
+	/** The theOwner. */
+	protected Player theOwner;
+
+	/** The available. */
+	private boolean available = true;
 
 	/**
 	 * Gets the name.
@@ -25,46 +25,28 @@ public abstract class Cell {
 	}
 
 	/**
-	 * Gets the owner.
+	 * Gets the theOwner.
 	 *
-	 * @return the owner
+	 * @return the theOwner
 	 */
-	public Player getOwner() {
-		return owner;
+	public Player getTheOwner() {
+		return theOwner;
 	}
 	
-	/**
-	 * Gets the price.
-	 *
-	 * @return the price
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc603.project2.monopoly.IOwnable#getPrice()
 	 */
+	@Override
 	public int getPrice() {
 		return 0;
 	}
 
-	/**
-	 * Checks if is available.
-	 *
-	 * @return true, if is available
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc603.project2.monopoly.IOwnable#playAction()
 	 */
-	public boolean isAvailable() {
-		return available;
-	}
-	
-	/**
-	 * Play action.
-	 */
+	@Override
 	public abstract void playAction();
 
-	/**
-	 * Sets the available.
-	 *
-	 * @param available the new available
-	 */
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
-	
 	/**
 	 * Sets the name.
 	 *
@@ -75,12 +57,12 @@ public abstract class Cell {
 	}
 
 	/**
-	 * Sets the owner.
+	 * Sets the theOwner.
 	 *
-	 * @param owner the new owner
+	 * @param theOwner the new theOwner
 	 */
-	public void setOwner(Player owner) {
-		this.owner = owner;
+	public void setTheOwner(Player owner) {
+		this.theOwner = owner;
 	}
     
     /* (non-Javadoc)
@@ -89,4 +71,22 @@ public abstract class Cell {
     public String toString() {
         return name;
     }
+
+	/**
+	 * Checks if is available.
+	 *
+	 * @return true, if is available
+	 */
+	public boolean isAvailable() {
+		return available;
+	}
+
+	/**
+	 * Sets the available.
+	 *
+	 * @param available the new available
+	 */
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 }

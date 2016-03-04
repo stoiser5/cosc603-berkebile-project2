@@ -21,4 +21,7 @@ public class GoToJailCell extends Cell {
 		GameMaster.instance().getGameBoard().queryCell("Jail");
 		GameMaster.instance().sendToJail(currentPlayer);
 	}
+
+	
+	
 }
